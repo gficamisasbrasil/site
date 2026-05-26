@@ -33,12 +33,15 @@
           <a href="#produtos">Produtos</a>
           <a href="#como-funciona">Como funciona</a>
           <a href="#contato">Contato</a>
+          <button class="cart-button" type="button" data-cart-open>
+            Carrinho <span data-cart-count>0</span>
+          </button>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="hero hero--clean" aria-labelledby="hero-title">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
         <div class="container hero-grid">
           <div class="hero-copy">
             <span class="eyebrow">Vitrine exclusiva em parceria com a GFI Connect</span>
@@ -73,10 +76,10 @@
       <section id="produtos" class="section section--products">
         <div class="container">
           <header class="section-header">
-            <h2 class="section-title">Escolha uma camisa e veja os detalhes.</h2>
+            <span class="section-kicker">Camisas oficiais</span>
+            <h2 class="section-title">Escolha a sua</h2>
             <p class="section-lead section-lead--center">
-              Cada produto tem sua propria pagina com fotos, descricao, tamanhos e link direto
-              para WhatsApp.
+              Veja fotos, tamanhos e valores. A finalização acontece manualmente pelo WhatsApp.
             </p>
           </header>
           <div id="products-grid" class="products-grid" aria-live="polite" aria-busy="true"></div>
@@ -86,28 +89,29 @@
       <section id="como-funciona" class="section section--steps">
         <div class="container">
           <header class="section-header">
-            <span class="section-label">Compra assistida</span>
-            <h2 class="section-title">Processo simples, com atendimento humano.</h2>
+            <span class="section-kicker">Compra assistida</span>
+            <h2 class="section-title">Como funciona</h2>
           </header>
           <div class="steps-grid">
             <article class="step-card">
               <span>01</span>
               <h3>Veja os modelos</h3>
-              <p>Filtre a vitrine e abra a pagina do produto para ver as fotos e informacoes.</p>
+              <p>Abra a página do produto para ver fotos, descrição e tamanhos.</p>
             </article>
             <article class="step-card">
               <span>02</span>
               <h3>Chame no WhatsApp</h3>
-              <p>O botao de compra abre uma mensagem pronta com o produto escolhido.</p>
+              <p>O botão de compra abre uma mensagem pronta com a camisa escolhida.</p>
             </article>
             <article class="step-card">
               <span>03</span>
               <h3>Finalize manualmente</h3>
-              <p>O atendimento confirma tamanhos, estoque, condicao GFI Connect e entrega.</p>
+              <p>O atendimento confirma estoque, saldo GFI, envio e próximos passos.</p>
             </article>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer id="contato" class="site-footer">
@@ -121,6 +125,21 @@
         <p>&copy; <span id="footer-year"></span> Shir7 x GFI Connect. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <aside id="cart-panel" class="cart-panel" aria-label="Carrinho de compras">
+      <div class="cart-panel__header">
+        <h2>Carrinho</h2>
+        <button type="button" data-cart-close aria-label="Fechar carrinho">×</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-panel__footer">
+        <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+        <a id="cart-checkout" class="btn btn--whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          Finalizar pelo WhatsApp
+        </a>
+        <button id="cart-clear" class="cart-clear" type="button">Limpar carrinho</button>
+      </div>
+    </aside>
 
     <script type="module" src="js/app.js"></script>
   </body>

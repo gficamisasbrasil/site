@@ -1,16 +1,15 @@
 export const SITE_CONFIG = {
   brand: "Shir7",
   partner: "GFI Connect",
-  whatsappNumber: "554191097071",
+  whatsappNumber: "5541991097071",
   instagram: "https://www.instagram.com/gficonnect",
   year: new Date().getFullYear(),
 };
 
 export const WHATSAPP_MESSAGE =
-  "Olá! Tenho interesse na Camisa {produto}. Gostaria de saber tamanhos disponíveis e como funciona a condição especial pela GFI Connect.";
+  "olá, gostaria de comprar minha camisa do brasil pelo GFI pay";
 
-export function buildWhatsAppUrl(productName) {
-  const message = WHATSAPP_MESSAGE.replace("{produto}", productName);
+export function buildWhatsAppUrl(message = WHATSAPP_MESSAGE) {
   const encoded = encodeURIComponent(message);
   const phone = SITE_CONFIG.whatsappNumber.trim();
 

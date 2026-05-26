@@ -1,5 +1,6 @@
-import { SITE_CONFIG } from "./config.js";
+import { SITE_CONFIG, buildWhatsAppUrl } from "./config.js";
 import { products, categories } from "./products.js";
+import { initCart } from "./cart.js";
 
 const formatPrice = (value) =>
   value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -101,6 +102,9 @@ function initFooter() {
 
   if (year) year.textContent = String(SITE_CONFIG.year);
   if (instagram) instagram.href = SITE_CONFIG.instagram;
+  document.querySelectorAll("[data-whatsapp-link]").forEach((link) => {
+    link.href = buildWhatsAppUrl();
+  });
 }
 
 function initHeroVideo() {
@@ -133,4 +137,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initFooter();
   initHeroVideo();
+  initCart();
 });

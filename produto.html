@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -22,11 +22,22 @@
     <header class="site-header">
       <div class="container site-header__inner">
         <a class="brand" href="index.html" aria-label="Voltar para a vitrine">
-          <img src="assets/logos/gfi-cbf-menu-banner-transparent.png" alt="CBF e GFI Connect" width="300" height="92" />
+          <img
+            src="assets/logos/gfi-cbf-menu-banner-transparent.png"
+            alt="CBF e GFI Connect"
+            width="300"
+            height="92"
+          />
         </a>
-        <nav class="site-nav site-nav--simple" aria-label="Navegacao do produto">
+        <nav
+          class="site-nav site-nav--simple"
+          aria-label="Navegacao do produto"
+        >
           <a href="index.html#produtos">Voltar aos produtos</a>
           <a href="index.html#como-funciona">Como funciona</a>
+          <button class="cart-button" type="button" data-cart-open>
+            Carrinho <span data-cart-count>0</span>
+          </button>
         </nav>
       </div>
     </header>
@@ -38,19 +49,67 @@
             <div class="product-gallery__main">
               <img id="product-main-image" src="" alt="" />
             </div>
-            <div id="product-thumbs" class="product-thumbs" aria-label="Fotos do produto"></div>
+            <div
+              id="product-thumbs"
+              class="product-thumbs"
+              aria-label="Fotos do produto"
+            ></div>
           </div>
 
           <article class="product-info">
-            <a class="back-link" href="index.html#produtos">Voltar para vitrine</a>
+            <a class="back-link" href="index.html#produtos"
+              >Voltar para vitrine</a
+            >
             <span id="product-category" class="product-info__category"></span>
             <h1 id="product-title"></h1>
             <p id="product-description" class="product-info__description"></p>
             <p id="product-price" class="product-info__price"></p>
 
             <div class="product-info__block">
-              <h2>Tamanhos disponiveis</h2>
-              <div id="product-sizes" class="size-list"></div>
+              <h2>Escolha o tamanho</h2>
+              <div
+                id="product-sizes"
+                class="size-list size-list--selectable"
+              ></div>
+            </div>
+
+            <div class="product-info__block">
+              <h2>Personalização</h2>
+              <div
+                class="custom-options"
+                role="radiogroup"
+                aria-label="Personalização da camisa"
+              >
+                <label>
+                  <input type="radio" name="customization" value="no" checked />
+                  Sem personalização
+                </label>
+                <label>
+                  <input type="radio" name="customization" value="yes" />
+                  Com personalização (+ R$ 60,00)
+                </label>
+              </div>
+              <div id="custom-fields" class="custom-fields" hidden>
+                <label>
+                  Nome na camisa
+                  <input
+                    id="custom-name"
+                    type="text"
+                    placeholder="Ex.: Neymar Jr."
+                    autocomplete="off"
+                  />
+                </label>
+                <label>
+                  Número
+                  <input
+                    id="custom-number"
+                    type="text"
+                    inputmode="numeric"
+                    placeholder="Ex.: 10"
+                    autocomplete="off"
+                  />
+                </label>
+              </div>
             </div>
 
             <div class="product-info__block">
@@ -58,6 +117,28 @@
               <ul id="product-highlights" class="highlight-list"></ul>
             </div>
 
+            <button
+              id="product-add-cart"
+              class="btn btn--ghost product-info__buy"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path
+                  d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h8.7a2 2 0 0 0 2-1.6L23 6H6"
+                />
+              </svg>
+              Adicionar ao carrinho
+            </button>
             <a
               id="product-buy"
               class="btn btn--whatsapp product-info__buy"
@@ -68,8 +149,8 @@
               Comprar pelo WhatsApp
             </a>
             <p class="product-info__note">
-              O WhatsApp esta sem numero fixo por enquanto. Quando definido, basta preencher
-              <strong>whatsappNumber</strong> em <strong>js/config.js</strong>.
+              O atendimento confirma disponibilidade, tamanhos, saldo GFI e
+              detalhes de envio.
             </p>
           </article>
         </div>
@@ -77,10 +158,49 @@
     </main>
 
     <footer class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <img
+            src="assets/logos/gfi-connect-footer.png"
+            alt="GFI Connect"
+            class="footer-logo"
+            width="180"
+          />
+          <p>Compra finalizada manualmente pelo WhatsApp.</p>
+        </div>
+      </div>
       <div class="container site-footer__bottom">
-        <p>&copy; <span id="footer-year"></span> Shir7 x GFI Connect. Compra finalizada manualmente.</p>
+        <p>
+          &copy; <span id="footer-year"></span> Shir7 x GFI Connect. Todos os
+          direitos reservados.
+        </p>
       </div>
     </footer>
+
+    <aside id="cart-panel" class="cart-panel" aria-label="Carrinho de compras">
+      <div class="cart-panel__header">
+        <h2>Carrinho</h2>
+        <button type="button" data-cart-close aria-label="Fechar carrinho">
+          ×
+        </button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-panel__footer">
+        <p>Total: <strong id="cart-total">R$ 0,00</strong></p>
+        <a
+          id="cart-checkout"
+          class="btn btn--whatsapp"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Finalizar pelo WhatsApp
+        </a>
+        <button id="cart-clear" class="cart-clear" type="button">
+          Limpar carrinho
+        </button>
+      </div>
+    </aside>
 
     <script type="module" src="js/product-page.js"></script>
   </body>
