@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   brand: "Shir7",
   partner: "GFI Connect",
-  whatsappNumber: "",
+  whatsappNumber: "554191097071",
   instagram: "https://www.instagram.com/gficonnect",
   year: new Date().getFullYear(),
 };
