@@ -77,7 +77,6 @@
             >
             <span id="product-category" class="product-info__category"></span>
             <h1 id="product-title"></h1>
-            <p id="product-description" class="product-info__description"></p>
             <p id="product-price" class="product-info__price"></p>
 
             <div class="product-info__block">
@@ -86,6 +85,15 @@
                 id="product-sizes"
                 class="size-list size-list--selectable"
               ></div>
+              <button
+                id="size-guide-open"
+                class="size-guide-link"
+                type="button"
+                aria-haspopup="dialog"
+                aria-controls="size-guide-modal"
+              >
+                Ver tabela de medidas
+              </button>
             </div>
 
             <div class="product-info__block">
@@ -170,7 +178,71 @@
           </article>
         </div>
       </section>
+
+      <section class="section section--related" aria-labelledby="related-products-title">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="related-products-title">Veja também</h2>
+            <p>Outros modelos disponíveis na vitrine GFI Connect.</p>
+          </div>
+          <div class="product-carousel">
+            <button
+              class="product-carousel__arrow product-carousel__arrow--prev"
+              type="button"
+              data-carousel-prev
+              aria-label="Ver camisa anterior"
+              disabled
+            >
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <div
+              id="related-products"
+              class="product-carousel__track"
+              aria-label="Outros produtos"
+              aria-busy="true"
+              tabindex="0"
+            ></div>
+            <button
+              class="product-carousel__arrow product-carousel__arrow--next"
+              type="button"
+              data-carousel-next
+              aria-label="Ver próxima camisa"
+            >
+              <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <div
+      id="size-guide-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="size-guide-title"
+      hidden
+    >
+      <div class="modal__overlay" data-size-guide-close></div>
+      <div class="modal__panel modal__panel--wide">
+        <div class="modal__header">
+          <h2 id="size-guide-title">Tabela de medidas</h2>
+          <button
+            class="modal__close"
+            type="button"
+            aria-label="Fechar tabela de medidas"
+            data-size-guide-close
+          >
+            ×
+          </button>
+        </div>
+        <div id="size-guide-content" class="modal__body"></div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container site-footer__grid">
