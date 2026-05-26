@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vitrine exclusiva de camisas em parceria com a GFI Connect. Produtos selecionados e atendimento pelo WhatsApp."
+    />
+    <title>Vitrine Exclusiva | GFI Connect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#produtos">Ir para os produtos</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html" aria-label="Pagina inicial">
+          <img src="assets/logos/gfi-cbf-menu-banner-transparent.png" alt="CBF e GFI Connect" width="300" height="92" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" aria-label="Navegacao principal">
+          <a href="#produtos">Produtos</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero hero--clean" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Vitrine exclusiva em parceria com a GFI Connect</span>
+            <h1 id="hero-title">Camisas da Seleção Brasileira em parceria com a GFI</h1>
+            <div class="hero-actions">
+              <a class="btn btn--primary" href="#produtos">Ver produtos</a>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Parceria GFI Connect e CBF">
+            <video
+              id="hero-video"
+              class="hero-panel__video"
+              src="Videos/WhatsApp Video 2026-05-26 at 11.41.42.mp4"
+              poster="Images/WhatsApp Image 2026-05-26 at 12.01.19.jpeg"
+              playsinline
+              preload="metadata"
+              aria-label="Video da parceria GFI"
+            ></video>
+            <button class="hero-video-play" type="button" aria-label="Iniciar video">
+              <span></span>
+            </button>
+            <div class="hero-panel__content">
+              <span>Condicao especial</span>
+              <strong>Clientes e parceiros GFI Connect</strong>
+              <p>Compre com o seu saldo da GFI.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="produtos" class="section section--products">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="section-title">Escolha uma camisa e veja os detalhes.</h2>
+            <p class="section-lead section-lead--center">
+              Cada produto tem sua propria pagina com fotos, descricao, tamanhos e link direto
+              para WhatsApp.
+            </p>
+          </header>
+          <div id="products-grid" class="products-grid" aria-live="polite" aria-busy="true"></div>
+        </div>
+      </section>
+
+      <section id="como-funciona" class="section section--steps">
+        <div class="container">
+          <header class="section-header">
+            <span class="section-label">Compra assistida</span>
+            <h2 class="section-title">Processo simples, com atendimento humano.</h2>
+          </header>
+          <div class="steps-grid">
+            <article class="step-card">
+              <span>01</span>
+              <h3>Veja os modelos</h3>
+              <p>Filtre a vitrine e abra a pagina do produto para ver as fotos e informacoes.</p>
+            </article>
+            <article class="step-card">
+              <span>02</span>
+              <h3>Chame no WhatsApp</h3>
+              <p>O botao de compra abre uma mensagem pronta com o produto escolhido.</p>
+            </article>
+            <article class="step-card">
+              <span>03</span>
+              <h3>Finalize manualmente</h3>
+              <p>O atendimento confirma tamanhos, estoque, condicao GFI Connect e entrega.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contato" class="site-footer">
+      <div class="container site-footer__grid">
+        <div>
+          <img src="assets/logos/gfi-connect-footer.png" alt="GFI Connect" class="footer-logo" width="180" />
+          <p>Vitrine exclusiva com compra facilitada pelo WhatsApp.</p>
+        </div>
+      </div>
+      <div class="container site-footer__bottom">
+        <p>&copy; <span id="footer-year"></span> Shir7 x GFI Connect. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
